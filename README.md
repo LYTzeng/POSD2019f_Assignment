@@ -7,9 +7,9 @@
 請寄信給助教
  "posd2019ta@gmail.com"
  
-信中附上 學號 以及 UserName
+信中附上 學號 
 
-EX `學號`:107598058  `UserName`:GP
+EX `學號`:107598058  
 
 請務必要寄信!
 
