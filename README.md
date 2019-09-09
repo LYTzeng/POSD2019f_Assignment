@@ -15,10 +15,9 @@ EX `學號`:107598058
 請務必要寄信!
 
 ### 教學文件閱讀順序
+1. GitlabSetup_POSD2019f.pdf 
 
-1. 環境設定.pdf
-
-2. GitlabSetup_POSD2019f.pdf 
+2. 環境設定.pdf
 
 3. 文字編輯器安裝教學.pdf 
 
