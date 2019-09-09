@@ -25,5 +25,5 @@ EX `學號`:107598058
 
 5. jenkins.pdf
 
-### makefile 教學###
+### makefile 教學 ###
 `makefile_tutorial`: https://ssl-gitlab.csie.ntut.edu.tw/course/makefile_tutorial
