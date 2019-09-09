@@ -1,6 +1,7 @@
 # Important Step
 ## Create Gitlab Account
 請參考檔案 "GitlabSetup_POSD2019f.pdf" 
+創建gitlab帳號
 
 創建好帳號之後
 
