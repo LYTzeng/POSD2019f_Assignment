@@ -37,6 +37,6 @@ EX
 `makefile_tutorial`: https://ssl-gitlab.csie.ntut.edu.tw/course/makefile_tutorial
 
 ### jenkins URL ###
-https://ssl-jenkins.csie.ntut.edu.tw/
+https://ssl-jenkins.csie.ntut.edu.tw/login?from=/
 
 `帳號` `密碼`預設皆為學號
