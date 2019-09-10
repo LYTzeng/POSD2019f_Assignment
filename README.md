@@ -1,4 +1,13 @@
-# Important Step
+# Homework Rule
+
+**作業準時交，分數視通過測試計算**
+
+**作業於deadline後"兩天內"交出，以遲交計算，分數*80%**
+
+  (若有補交請寄信通知助教 "posd2019ta@gmail.com")
+
+**作業於deadline後"兩天後"交出，將不予計分，此次作業0分計算**
+
 ## Create Gitlab Account
 請參考檔案 "GitlabSetup_POSD2019f.pdf" 
 創建Gitlab帳號
