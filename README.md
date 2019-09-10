@@ -18,9 +18,9 @@ EX
 
 `學號`: 107598058  
 
-請務必在9/11(三)23:59前寄信!
+請務必在`9/11(三)23:59`前寄信!
 
-(隔日9/12,待助教審核完畢，即可看到HW專案)
+**(隔日9/12,待助教審核完畢，即可看到HW專案，進行作業上傳)**
 
 ### 教學文件閱讀順序
 1. GitlabSetup_POSD2019f.pdf 
@@ -35,3 +35,8 @@ EX
 
 ### makefile 教學 ###
 `makefile_tutorial`: https://ssl-gitlab.csie.ntut.edu.tw/course/makefile_tutorial
+
+### jenkins URL ###
+https://ssl-jenkins.csie.ntut.edu.tw/login?from=/
+
+`帳號` `密碼`預設皆為學號
