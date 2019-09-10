@@ -38,4 +38,5 @@ EX
 
 ### jenkins URL ###
 https://ssl-jenkins.csie.ntut.edu.tw/
-`帳號``密碼`預設為學號
+
+`帳號` `密碼`預設皆為學號
