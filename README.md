@@ -6,7 +6,7 @@
 
 2. Jenkins會於deadline準時關閉,作業於deadline後"兩天內"交出，以遲交計算，分數*80%
 
-    (若有補交請寄信通知助教 "posd2019ta@gmail.com")
+    (若有補交請寄信通知助教 "posd2019ta@gmail.com"，若無寄信將不予受理)
 
 3. 作業於deadline後"兩天後"交出，將不予計分，此次作業0分計算
 
