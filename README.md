@@ -72,6 +72,8 @@
         ...
         }
     
+    You can only construct triangle class, when you want to buid a Isosceles Triangle.
+    
     If it is not a IsoscelesTriangle, you should throw the `string` "Not a IsoscelesTriangle."
 
     `Note:`
