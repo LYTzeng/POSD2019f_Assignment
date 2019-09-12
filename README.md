@@ -30,7 +30,7 @@
         class CircularSector:public Shape
         {
         public:
-            CircularSector(double radius, double degree)_radius(radius), _degree(degree){}
+            CircularSector(double radius, double degree): _radius(radius), _degree(degree){}
             double area() const{}
             double perimeter() const{}
 
@@ -41,7 +41,7 @@
         class Triangle:public Shape
         {
         public:
-            Triangle(double x1, double y1, double x2, double y2, double x3, double y3):_x1(x1), _x2(x2), _x3(x3), _y1(y1), _y2(y2), _y3(y3){}
+            Triangle(double x1, double y1, double x2, double y2, double x3, double y3): _x1(x1), _x2(x2), _x3(x3), _y1(y1), _y2(y2), _y3(y3){}
             // give you three points (x1,y1), (x2,y2), (x3,y3) to calculate area and perimeter
             double area() const{}
             double perimeter() const{}
@@ -53,7 +53,7 @@
         class Ellipse:public Shape
         {
         public:
-            Ellipse(double semiMajorAxes,double semiMinorAxes):_semiMajorAxes(semiMajorAxes), _semiMinorAxes(semiMinorAxes){}
+            Ellipse(double semiMajorAxes,double semiMinorAxes): _semiMajorAxes(semiMajorAxes), _semiMinorAxes(semiMinorAxes){}
             double area() const{}
             double perimeter() const{} // perimeter formula: 2π * semiMinorAxes + 4(semiMajorAxes-semiMinorAxes)
  
