@@ -2,149 +2,211 @@
 #### Fall, 2019
 #### Dept. of Computer Science and Information Engineering
 #### Taipei Tech
-#### Homework 1
+
+#### Homework 2
 
 # Update
-12 Sep 2019
+20 Sep 2019
 
 # Purpose of the homework:
-  Practice to write the unit test and makefile.
-# Requirement:
-1. Create `shape.h`, `circular_sector.h`, `triangle.h`, `ellipse.h` under the `src` folder .
+  Different ways to pass compare function
+  1. lambda function
+  2. function
+  3. object
+  
+  Implement quicksort and Using different ways to pass compare function
 
-    You should follow the classes below:
+  See [C++ Reference std::sort](http://www.cplusplus.com/reference/algorithm/sort/ "std::Sort")
 
-    **Note: Each class below are the skeleton. You should finish implementation by yourself.**
-    
-    `shape.h`
-    
-        class Shape
-        {
-            public:
+  See [C++ Reference vector iterator](http://www.cplusplus.com/reference/vector/vector/begin/ )
+
+# Requirements:
+ 1. Modify `shape.h`. with following interface below.
+
+        class Shape {
+        ...
             virtual double area() const = 0;
             virtual double perimeter() const = 0;
-        }; 
-    
-    `circular_sector.h`
-    
-        class CircularSector:public Shape
-        {
-        public:
-            CircularSector(double radius, double degree)_radius(radius), _degree(degree){}
-            double area() const{}
-            double perimeter() const{}
+            virtual double sumOfSquares() const = 0;
+        
+        ...
+        }
 
+ 2. Implement `sumOfSquares()` method for `each class`.
+
+        sumOfSquares Formula : area ^2 + perimeter ^2
+
+
+ 3. Create `sort.h`. with following interface below:
+
+    **Note: Each class constructor below are the skeleton. You should finish implementation by yourself.**
+
+        class Sort{
+            public:
+              Sort(std::vector<Shape*>* v): _v(v){}
+
+              // The argument ** Accept comparison ** can accept lambda, function, and object
+              void sortArea(** Accept comparison **)
+                // you can use std:sort in this function
+
+              void sortPerimeter(** Accept comparison **)
+                // you can use std:sort in this function
+
+              void sortSumOfSquares(** Accept comparison **)
+                // you can use std:sort in this function
+
+              void quickSort(** Accept comparison **)
+                // quickSort() function should be function template
+                // You should write the quickSort by yourself!
+                // In the loop of the quickSort algorithm, use Iterator to control your vector rather than index.
+                ***
+                Example:
+                    for ( std::vector<...>::iterator it ... )
+                ***
+
+            private:
+              std::vector<Shape*>* _v;
         };
         
-    `triangle.h`
-    
-        class Triangle:public Shape
-        {
-        public:
-            Triangle(double x1, double y1, double x2, double y2, double x3, double y3):_x1(x1), _x2(x2), _x3(x3), _y1(y1), _y2(y2), _y3(y3){}
-            // give you three points (x1,y1), (x2,y2), (x3,y3) to calculate area and perimeter
-            double area() const{}
-            double perimeter() const{}
-            bool isIsoscelesTriangle(){}
+        // implement following call back function
+        
+        bool areaAscendingComparison(Shape *a, Shape *b){...};
+
+        bool areaDescendingComparison(Shape *a, Shape *b){...};
+        
+        class AscendingComparison{
+            AscendingComparison(string XXX){...}
         };
         
-    `ellipse.h`
+        class DescendingComparison{
+            DescendingComparison(string XXX){...}
+        };
+        
+        
+
+    **You should implement ascending descending `lambda function` as parameter for Sort::sortArea(), Sort::sortPerimeter(), Sort::sortSumOfSquares(), Sort::quickSort()**
+
+    **You should use following functions as parameter for Sort::sortArea(), Sort::quickSort()**
+        
+        bool areaAscendingComparison(Shape *a, Shape *b){...};
+
+        bool areaDescendingComparison(Shape *a, Shape *b){...};
+        
+
+
+    **You should use following objects as parameter for Sort::sortArea(), Sort::sortPerimeter(), Sort::sortSumOfSquares(), Sort::quickSort()**
+            
+        class AscendingComparison{
+            AscendingComparison(string XXX){...}
+          
+            *** You should use "xxx" to identify Comparison ***
+          
+            For example:
+              string xxx is `area` that your operator should compare `area`
+            
+              string xxx is `perimeter` that your operator should compare `perimeter`
+            
+              string xxx is `sumOfSquares` that your operator should compare `sumOfSquares`
+        };
+
+        class DescendingComparison{
+            DescendingComparison(string XXX){...}
+            
+            *** You should use "xxx" to identify Comparison ***
+              
+              For example:
+                string xxx is `area` that your operator should compare `area`
+                
+                string xxx is `perimeter` that your operator should compare `perimeter`
+                
+                string xxx is `sumOfSquares` that your operator should compare `sumOfSquares`
+        };
     
-        class Ellipse:public Shape
-        {
-        public:
-            Ellipse(double semiMajorAxes,double semiMinorAxes):_semiMajorAxes(semiMajorAxes), _semiMinorAxes(semiMinorAxes){}
-            double area() const{}
-            double perimeter() const{} // perimeter formula: 2π * semiMinorAxes + 4(semiMajorAxes-semiMinorAxes)
+        
+    For example:
+        
+            vector<Shape*> shapes(....);
+            Sort* sort = new Sort(&shapes);
+            AscendingComparison ascendingComparison("area");
+            sort->sortArea(ascendingComparison);
+              
+    shapes will be sorted by area ascendingly by the above code        
+        
+    **Note:  In the loop of the `quickSort` algorithm, use `std::vector<Shape*>::Iterator` to control your vector rather than index.**
+    **You should implement quickSort() as function template**
+    **We will pass following comparison function you wrote to quickSort() function to test.**
+             
+             For example:
+                 Pass `areaAscendingComparison()` function to quickSort(), then the shapes will be sorted ascendingly by area. 
+                 Pass `sumOfSquaresAscendingComparison` object to quickSort(), then the shapes will be sorted ascendingly by sumOfSquares.
+                 Pass `lambdafunction` to quickSort()...
+                 ...
+
+ 4. Create `main.cpp` under `src` folder, `ut_sort.h` under `test` folder.<br>
+ The `main.cpp` should include `ut_sort.h`.<br>
+ Write the sort unit test in `ut_sort.h`.<br>
+
+ 5. Write the corresponding makefile to generate executable file which named **`bin/ut_all`**.
  
-        };
+    Modify makefile, and when program encounter many errors terminal will show only `First Error`.
+
+    For example:
+    
+          Following Errors on terminal
+          
+            src/../test/ut_sort.h:206:6: error: redefinition of ‘class ShapeTest_BubbleSortClass_Test’
+             TEST(ShapeTest, BubbleSortClass)
+                  ^
+            src/../test/ut_sort.h:191:6: note: previous definition of ‘class ShapeTest_BubbleSortClass_Test’
+             TEST(ShapeTest, BubbleSortClass)
+                  ^
+            src/../test/ut_sort.h:206:1: error: redefinition of ‘testing::TestInfo* const ShapeTest_BubbleSortClass_Test::test_info_’
+             TEST(ShapeTest, BubbleSortClass)
+             ^
+            src/../test/ut_sort.h:191:6: note: ‘testing::TestInfo* const ShapeTest_BubbleSortClass_Test::test_info_’ previously declared here
+             TEST(ShapeTest, BubbleSortClass)
+                  ^
+            src/../test/ut_sort.h:206:6: error: redefinition of ‘void ShapeTest_BubbleSortClass_Test::TestBody()’
+             TEST(ShapeTest, BubbleSortClass)
+           
+       `After modify makefile it can show only first error`
         
-2. Implement `area()` and `perimeter()` method for each class.
-
-   ( If you need to use "pi", you should include <math.h> and use `M_PI` )
-
-3. Implement the `isIsoscelesTriangle()` function in Triangle class.
-
-        class Triangle:public Shape 
-        {
-        ...
-            bool isIsoscelesTriangle()
-        ...
-        }
+        src/../test/ut_sort.h:206:6: error: redefinition of ‘class ShapeTest_BubbleSortClass_Test’
+         TEST(ShapeTest, BubbleSortClass)
+       
+       
+ 6. Make sure your project structure should be the same as following
+    - 學號_HW
+        - src
     
-    If it is not a IsoscelesTriangle, you should throw the `string` "Not a IsoscelesTriangle."
-
-    `Note:`
-        If it can not form a triangle, you also need to throw the `string` "Not a IsoscelesTriangle."
-
-        class Triangle:public Shape 
-        {
-        ...
-            Triangle(double x1, double y1, double x2, double y2, double x3, double y3):_x1(x1), _x2(x2), _x3(x3), _y1(y1), _y2(y2), _y3(y3)
-            {
-            ...
-                if (...)
-                {
-                    throw ...;
-                }
-                ...
-
-            }
-
-            bool isIsoscelesTriangle(){}
-        ...
-        }
+          circular_sector.h
     
-
-4. Write the unit test in `ut_shape.cpp` and put it under the `test` folder .
-
-5. Write the corresponding makefile to generate executable file which named `ut_all` under the `bin` folder. 
-
-# Note
-
-Professor have push his code on the course repository.
-
-You can refer to the source code under `shapes` folder at https://ssl-gitlab.csie.ntut.edu.tw/yccheng/posd2019f.
+          ellipse.h
+    
+          main.cpp
+    
+          shape.h
+    
+          sort.h
+    
+          triangle.h
+    
+        - test
+    
+          ut_sort.h
+    
+        - bin
+    
+          ut_all
+    
+        - makefile
 
 # Mark
 
-TA assigned 10 test cases in CI.
-
-Each test is 10 points, total is 100 points.
-
+TA assigned 13 test cases in CI.
 
 # Deadline
-11:59 p.m. 19 Sep 2019
+11:59 p.m. `(Wednesday) 25 Sep` 2019
 
-# File structure
-This time your directory structure should be like:
- - 學號_HW
-    - src
-
-      shape.h
-
-      ellipse.h
-
-      circular_sector.h
-
-      triangle.h
-
-    - test
-
-      ut_shape.cpp
-
-    - bin
-
-      ut_all
-
-    - makefile
-
-
-
-    `shape.h`, `ellipse.h`, `circular_sector.h`, `triangle.h` under `src` folder
-
-    `ut_shape.cpp` under `test` folder
-
-    `ut_all` under `bin` folder
-
-Make sure your test on local is passed.Then you can push to gitlab and go to jenkins to check the report.
+# Note
+Make sure your tests on local are all pass. Then you can push to Gitlab and watch the report on Jenkins.
