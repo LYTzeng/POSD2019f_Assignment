@@ -154,25 +154,25 @@
     
           Following Errors on terminal
           
-            src/../test/ut_sort.h:206:6: error: redefinition of ‘class ShapeTest_BubbleSortClass_Test’
-             TEST(ShapeTest, BubbleSortClass)
+            src/../test/ut_sort.h:206:6: error: redefinition of ‘class ShapeTest_QuickSortClass_Test’
+             TEST(ShapeTest, QuickSortClass)
                   ^
-            src/../test/ut_sort.h:191:6: note: previous definition of ‘class ShapeTest_BubbleSortClass_Test’
-             TEST(ShapeTest, BubbleSortClass)
+            src/../test/ut_sort.h:191:6: note: previous definition of ‘class ShapeTest_QuickSortClass_Test’
+             TEST(ShapeTest, QuickSortClass)
                   ^
-            src/../test/ut_sort.h:206:1: error: redefinition of ‘testing::TestInfo* const ShapeTest_BubbleSortClass_Test::test_info_’
-             TEST(ShapeTest, BubbleSortClass)
+            src/../test/ut_sort.h:206:1: error: redefinition of ‘testing::TestInfo* const ShapeTest_QuickSortClass_Test::test_info_’
+             TEST(ShapeTest, QuickSortClass)
              ^
-            src/../test/ut_sort.h:191:6: note: ‘testing::TestInfo* const ShapeTest_BubbleSortClass_Test::test_info_’ previously declared here
-             TEST(ShapeTest, BubbleSortClass)
+            src/../test/ut_sort.h:191:6: note: ‘testing::TestInfo* const ShapeTest_QuickSortClass_Test::test_info_’ previously declared here
+             TEST(ShapeTest, QuickSortClass)
                   ^
-            src/../test/ut_sort.h:206:6: error: redefinition of ‘void ShapeTest_BubbleSortClass_Test::TestBody()’
-             TEST(ShapeTest, BubbleSortClass)
+            src/../test/ut_sort.h:206:6: error: redefinition of ‘void ShapeTest_QuickSortClass_Test::TestBody()’
+             TEST(ShapeTest, QuickSortClass)
            
        `After modify makefile it can show only first error`
         
-        src/../test/ut_sort.h:206:6: error: redefinition of ‘class ShapeTest_BubbleSortClass_Test’
-         TEST(ShapeTest, BubbleSortClass)
+        src/../test/ut_sort.h:206:6: error: redefinition of ‘class ShapeTest_QuickSortClass_Test’
+         TEST(ShapeTest, QuickSortClass)
        
        
  6. Make sure your project structure should be the same as following
