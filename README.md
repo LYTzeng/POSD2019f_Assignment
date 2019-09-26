@@ -83,7 +83,7 @@
  
         class Terminal
         {
-        public:"
+        public:
             // you can use regular expression to get useful token from "Input string"
             Terminal(** Input string **)
             {
