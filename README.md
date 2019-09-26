@@ -59,7 +59,7 @@
 
         int main(int argc, char *argv[]){
               // argv you can see makefile "bin/geo input.txt output.txt area inc"
-              // argv[0] = input.txt, argv[1] = output.txt, argv[2] = area, argv[3] = inc 
+              // argv[1] = input.txt, argv[2] = output.txt, argv[3] = area, argv[4] = inc 
               // implement reading input.txt
               // compose the string to Terminal(** Input string **)
               // **Input string**  Example: "Ellipse (6,5) Triangle (3,0,0,2,-3,0) CircularSector (8,40) area inc"
