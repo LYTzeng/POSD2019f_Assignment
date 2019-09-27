@@ -162,7 +162,7 @@
     
     show result 
         
-        [6.000000, 22.340214, 94.247780]
+        [22.340214, 94.247780]
  
  8. Invalid argument will be skipped such as !@#$%^^<>?, not arg, etc.
   
