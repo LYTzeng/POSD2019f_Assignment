@@ -158,7 +158,7 @@
     
     This input are valid:
     
-        Ellipse (6  ,   5) triangle (3  ,0    ,  0  , 2,  -3,0) CircularSector (8  ,  40) area inc
+        Ellipse (6  ,   5) Triangle (3  ,0    ,  0  , 2,  -3,0) CircularSector (8  ,  40) area inc
     
     show result 
         
