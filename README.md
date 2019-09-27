@@ -162,7 +162,7 @@
     
     show result 
         
-        [22.340214, 94.247780]
+        [6.000000, 22.340214, 94.247780]
  
  8. Invalid argument will be skipped such as !@#$%^^<>?, not arg, etc.
   
@@ -186,7 +186,7 @@
     
     For example:
 
-        Ellipse (6,5) triangle (3,0,0,2,-3,0) CircularSector (8,40) area inc
+        Ellipse (6,5) Triangle (3,0,0,2,-3,0) CircularSector (8,40) area inc
     
     triangle (3,0,0,2,-3,0) => Shape name `triangle` first character is lowercase, so `triangle (3,0,0,2,-3,0)` should be skipped
     
