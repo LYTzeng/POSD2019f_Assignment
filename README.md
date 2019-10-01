@@ -172,6 +172,10 @@
 
         Ellipse (6,5) Triangle (3,0,0,2,-3,0) CircularSector (8,40) area inc !@#$%%
         
+    or
+        
+        Ellipse (6,5) Triangle (3,0,0,2,-3,0) !@#$%% CircularSector (8,40) area inc
+        
     can also show result 
         
         [6.000000, 22.340214, 94.247780]
