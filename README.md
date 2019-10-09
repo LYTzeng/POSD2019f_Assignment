@@ -83,7 +83,7 @@
       **Note**  
       `File->findNode(std::string nodeName)` should return the file name if the file was found.
 
-            ASSERT.EQ("a.out",a_out->find("a.out"));
+            ASSERT.EQ("a.out",a_out->findNode("a.out"));
 
  
  4. **There is a situation you should be known. The fileSystem can have the same file/folder name in the different folder.**
