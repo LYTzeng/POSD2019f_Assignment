@@ -1,57 +1,155 @@
-# Homework Rule
+# Pattern Oriented Software Design
+#### Fall, 2019
+#### Dept. of Computer Science and Information Engineering
+#### Taipei Tech
 
-1. 作業準時交，分數視通過測試
+#### Homework 4
 
-   (若無撰寫當次作業欲開發功能之單元測試，將酌量扣分，最高扣10分)
+# Purpose of the homework:
+  Practice composite pattern.
 
-2. Jenkins會於deadline準時關閉,作業於deadline後"兩天內"交出，以遲交計算，分數*80%
+  You can reference Professor's website https://ssl-gitlab.csie.ntut.edu.tw/yccheng/posd2019f to implement following methods
+  
+  (You can modify method or add new method by yourself)
+  
+  Don't use `global function or global variable`!
+  
+  1. `name()`  
+  
+  2. `findNode()` 
+  
+  3. `listNode()` 
 
-    (若有補交請寄信通知助教 "posd2019ta@gmail.com"，若無寄信將不予受理)
-
-3. 作業於deadline後"兩天後"交出，將不予計分，此次作業0分計算
-
-    **若有`特殊情況`請事先寄信通知助教** 
+      The `findNode()` method is just like `find XXX -name XXXX` command in linux.
+      
+      The `listNode()` method is just like `ls` command in linux.
+  
+  
+# Requirements:
+ 1. You can reference Professor's website https://ssl-gitlab.csie.ntut.edu.tw/yccheng/posd2019f
+ 
+ 2. Give you `path` that you should check the node is exist or not 
+ 
+    If it is not exist you should throw "Node is not exist!"
     
-    **若有其他問題，亦可至宏裕科技大樓Lab1321 軟體系統實驗室，找助教詢問**
+     For example:
 
-## Create Gitlab Account
-請參考檔案 "GitlabSetup_POSD2019f.pdf" 
-創建Gitlab帳號
+        Node * a_out = new File("test/TA_folder/hw/Not_exist_file");
+    
+    If new File("XXXX")/new Folder("XXX") you should check the node is file/folder
+    
+    If it is not file you should throw "It is not File!"
+    
+    For example:
 
-創建好帳號之後
+        Node * a_out = new File("test/TA_folder/hw/TA_Folder");
+    
+    If it is not folder you should throw "It is not Folder!"
+    
+    For example:
+    
+        Node * a_out = new Folder("test/TA_folder/hw/TA_File");
+ 3. Implement `name()` and `findNode()` and `listNode()` method for File, Folder, Node class.
 
-請寄信給助教
- "posd2019ta@gmail.com"
+        std::string name()
+        {
+              // For example path:"test/TA_folder/hello.txt"
+              // "hello.txt" is name
+              // Return "hello.txt"
+        }
+        
+        std::string findNode(std::string name)
+        {
+              // implementation findNode
+              // folder->findNode(name) that should find all nodes(include child nodes and all offspring) under it. 
+              // file->findNode(name) that should find itself.
+              // if find two nodes or more than two nodes.
+              // Result should be separated by '\n'. 
+              
+        }
+        
+        std::string listNode()
+        {
+              // implementation list child Node and Sort by dictionary
+              // Result should be separated by space
+              // For example: 
+              // Folder contains childnode "a.out" and "TA_folder" and "hello.txt"
+              // It should return "TA_folder a.out hello.txt"
+              // If node is file, it can't listNode.
+              // It should throw "Not a directory"
+              // For Example: TA_file->listNode()
+        }
+
+      **Note**  
+      `File->findNode(std::string nodeName)` should return the file name if the file was found.
+
+            ASSERT.EQ("a.out",a_out->find("a.out"));
+
  
-主旨: Gitlab帳號創建完成 
+ 4. **There is a situation you should be known. The fileSystem can have the same file/folder name in the different folder.**
  
-內文附上"學號" 
+    **Your answer should be all the paths seperated by '\n'. Just like linux find multipath.**
 
-EX 
+      *Example: `a.out` in different folders*
 
-`主旨`: Gitlab帳號創建完成
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *test_data/`a.out`*
 
-`學號`: 107598058  
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*test_data/folder/`a.out`*
 
-請務必在`9/11(三)23:59`前寄信!
+    And your answer of  `test_data->findNode('a.out')` should be:
 
-**(隔日9/12,待助教審核完畢，即可看到HW專案，進行作業上傳)**
+        ./a.out\n./folder/a.out
 
-### 教學文件閱讀順序
-1. GitlabSetup_POSD2019f.pdf 
+    And the assertion should be:
 
-2. 環境設定.pdf
+        ASSERT.EQ("./a.out\n./folder/a.out", test_data->findNode("a.out"));
 
-3. 文字編輯器安裝教學.pdf 
+      Note
 
-4. 作業上傳教學.pdf 
+      The `findNode()` result is same as using the `find test_data -name a.out` command in linux.
+ 
+ 5. listnode() Your answer should be all Nodenames seperated by ' '. Just like `ls` command in linux.
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; test_data/`a.out`
 
-5. jenkins.pdf
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test_data/`TA_folder`
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test_data/`hello.txt`
+    
+    and your answer of  `test_data->listNode()` should be:
 
-### makefile 教學 ###
-`makefile_tutorial`: https://ssl-gitlab.csie.ntut.edu.tw/course/makefile_tutorial
+        TA_folder a.out hello.txt
 
-### jenkins URL ###
-https://ssl-jenkins.csie.ntut.edu.tw/login?from=/
+    And the assertion should be:
 
-`帳號` `密碼`預設皆為學號
+        ASSERT.EQ("TA_folder a.out hello.txt", test_data->listNode());
+    
+ 
+ 5. Write the corresponding makefile to generate executable file which named **`ut_all`** in bin folder.
+
+#### File structure:
+`ut_main.cpp` should include "ut_node.h"
+
+```
+- bin
+    - ut_all
+- src
+    - file.h
+    - folder.h
+    - node.h
+- test
+    - test_folder
+    - ut_main.cpp
+    - ut_node.h
+makefile
+```
+
+# Grading rubrics
+
+TA assigned 12 test cases in CI.
+
+# Deadline
+11:59 p.m. 17 oct 2019
+
+# Note
+Make sure your all tests pass on your local machine. Then you can push to Gitlab and see the report on Jenkins.
