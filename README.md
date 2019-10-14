@@ -20,7 +20,7 @@
   
   3. `listNode()` 
 
-      The `findNode()` method is just like `find XXX -name XXXX` command in linux.
+      The `findNode()` method is just like `find -name XXXX` command in linux.
       
       The `listNode()` method is just like `ls` command in linux.
   
@@ -106,7 +106,7 @@
 
       Note
 
-      The `findNode()` result is same as using the `find test_data -name a.out` command in linux.
+      The `findNode()` result is same as using the `find -name a.out` command in linux.
  
  5. listnode() Your answer should be all Nodenames seperated by ' '. Just like `ls` command in linux.
     
