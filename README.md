@@ -1,57 +1,138 @@
-# Homework Rule
+# Pattern Oriented Software Design
+#### Fall, 2019
+#### Dept. of Computer Science and Information Engineering
+#### Taipei Tech
+#### Homework 5
 
-1. 作業準時交，分數視通過測試
+# Update
+23 Oct 2019
 
-   (若無撰寫當次作業欲開發功能之單元測試，將酌量扣分，最高扣10分)
+#### Homework 5
 
-2. Jenkins會於deadline準時關閉,作業於deadline後"兩天內"交出，以遲交計算，分數*80%
+# Purpose of the homework:
 
-    (若有補交請寄信通知助教 "posd2019ta@gmail.com"，若無寄信將不予受理)
+####  Use the [course material](https://ssl-gitlab.csie.ntut.edu.tw/yccheng/posd2019f) to implement Iterator Pattern.
 
-3. 作業於deadline後"兩天後"交出，將不予計分，此次作業0分計算
+####  Change the data structure `std::vector<Node *>`  into `std::map<string, Node *>` and refactor related member functions.
+# Requirements:
+ 1. Add Test Setup and Test Teardown in UnitTest.
+ 2. In Folder class, you must change the the data structure `std::vector<Node *>` into `std::map<string,Node *>` and make sure member functions in Folder class work correctly afterwards.
+ 
+    **Note:** You must use filename as your key in `std::map<string, Node *>`
+ 
+ 3. Create the Iterator class in iterator.h . Move innerclass Iterator from class Node to iterator.h.
+    In iterator.h, you can use following code and #include guard.
+    You should not include node.h to avoid some condition. Write 'class Node' instead.
 
-    **若有`特殊情況`請事先寄信通知助教** 
+        class Node;
+        class Iterator
+        {
+        public:
+          virtual void first() = 0;
+          virtual Node* currentItem() = 0;
+          virtual void next() = 0;
+          virtual bool isDone() = 0;
+        };
+
+ 4. Modify createIterator() function to be `virtual Iterator *createIterator() = 0;` in  `Node` class
+ 5. Create the inner class `FolderIterator`  in folder class and `FolderIterator` should inherit `Iterator`
+ 
+        class FolderIterator : public XXXX
+         {
+          public:
+            FolderIterator(Folder * f){}
+            void first()
+            {
+              // initialization
+            }
+            Node* currentItem()
+            {
+              // if iterator is to the end that it should throw string "No current item!"
+              // if iterator is not to the end that it should return current node
+            }
+            void next()
+            {
+              // if iterator is to the end that it should throw string "Moving past the end!"
+              // if iterator is not to the end that it should add 1
+            }
+            bool isDone()
+            {
+              // return iterator is to the end or not?
+            }
+        }
+
+ 6. Create NullIterator in null_iterator.h and it should inherit `Iterator`, where the member function `isDone()` must return true.
+    Remove innerclass NullIterator in Node class. 
+ 
+    **Note:** The File class call createIterator() must return NullIterator.
+
+        class NullIterator:public XXX
+        {
+          public:
+            void first(){
+              //throw string "no child member"
+            }
+            Node* currentItem(){
+              //throw string "no child member"
+            }
+            void next() {
+              //throw string "no child member"
+            }
+            bool isDone(){
+              return true;
+            }
+        };
+  
+ 7. Create utilities.h and class Utilities
     
-    **若有其他問題，亦可至宏裕科技大樓Lab1321 軟體系統實驗室，找助教詢問**
+        class Utilities 
+        {
+            public:
+                string listNode(Node* node)
+                {
+                    // You should use iterator pattern to access node in folder!
+                    // You can use dynamic_cast if you need
+                    // If node is file that it should throw string "Not a directory"
+                    // This function is same as Hw4 listNode()
+                }
+    
+                string findNode(Node* node, string name)
+                {
+                    // You should use iterator pattern to access node in folder!
+                    // You can use dynamic_cast if you need
+                    // This function is same as Hw4 findNode()
+                }
+        };
+  
+            
+ 8.Write the corresponding makefile to generate executable file which named `bin/ut_all` in bin folder.
 
-## Create Gitlab Account
-請參考檔案 "GitlabSetup_POSD2019f.pdf" 
-創建Gitlab帳號
+#### File structure:
+`ut_main.cpp` should include "ut_fs.h"
 
-創建好帳號之後
+```
+- bin
+    - ut_all
+- src
+    - file.h
+    - folder.h
+    - node.h
+    - iterator.h
+    - null_iterator.h
+    - utilities.h
+- test
+    - test_folder
+    - ut_main.cpp
+    - ut_fs.h
+makefile
+```
 
-請寄信給助教
- "posd2019ta@gmail.com"
- 
-主旨: Gitlab帳號創建完成 
- 
-內文附上"學號" 
+# Grading rubrics
 
-EX 
+TA assigned 12 test cases in CI.
 
-`主旨`: Gitlab帳號創建完成
+# Deadline
+11:59 p.m. 30 Oct 2019
 
-`學號`: 107598058  
-
-請務必在`9/11(三)23:59`前寄信!
-
-**(隔日9/12,待助教審核完畢，即可看到HW專案，進行作業上傳)**
-
-### 教學文件閱讀順序
-1. GitlabSetup_POSD2019f.pdf 
-
-2. 環境設定.pdf
-
-3. 文字編輯器安裝教學.pdf 
-
-4. 作業上傳教學.pdf 
-
-5. jenkins.pdf
-
-### makefile 教學 ###
-`makefile_tutorial`: https://ssl-gitlab.csie.ntut.edu.tw/course/makefile_tutorial
-
-### jenkins URL ###
-https://ssl-jenkins.csie.ntut.edu.tw/login?from=/
-
-`帳號` `密碼`預設皆為學號
+# Note
+Make sure your all tests pass on your local machine. Then you can push to Gitlab and see the report on Jenkins.
