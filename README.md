@@ -1,57 +1,150 @@
-# Homework Rule
+# Pattern Oriented Software Design
+#### Fall, 2019
+#### Dept. of Computer Science and Information Engineering
+#### Taipei Tech
+#### Homework 1
 
-1. 作業準時交，分數視通過測試
+# Update
+12 Sep 2019
 
-   (若無撰寫當次作業欲開發功能之單元測試，將酌量扣分，最高扣10分)
+# Purpose of the homework:
+  Practice to write the unit test and makefile.
+# Requirement:
+1. Create `shape.h`, `circular_sector.h`, `triangle.h`, `ellipse.h` under the `src` folder .
 
-2. Jenkins會於deadline準時關閉,作業於deadline後"兩天內"交出，以遲交計算，分數*80%
+    You should follow the classes below:
 
-    (若有補交請寄信通知助教 "posd2019ta@gmail.com"，若無寄信將不予受理)
-
-3. 作業於deadline後"兩天後"交出，將不予計分，此次作業0分計算
-
-    **若有`特殊情況`請事先寄信通知助教** 
+    **Note: Each class below are the skeleton. You should finish implementation by yourself.**
     
-    **若有其他問題，亦可至宏裕科技大樓Lab1321 軟體系統實驗室，找助教詢問**
+    `shape.h`
+    
+        class Shape
+        {
+            public:
+            virtual double area() const = 0;
+            virtual double perimeter() const = 0;
+        }; 
+    
+    `circular_sector.h`
+    
+        class CircularSector:public Shape
+        {
+        public:
+            CircularSector(double radius, double degree)_radius(radius), _degree(degree){}
+            double area() const{}
+            double perimeter() const{}
 
-## Create Gitlab Account
-請參考檔案 "GitlabSetup_POSD2019f.pdf" 
-創建Gitlab帳號
-
-創建好帳號之後
-
-請寄信給助教
- "posd2019ta@gmail.com"
+        };
+        
+    `triangle.h`
+    
+        class Triangle:public Shape
+        {
+        public:
+            Triangle(double x1, double y1, double x2, double y2, double x3, double y3):_x1(x1), _x2(x2), _x3(x3), _y1(y1), _y2(y2), _y3(y3){}
+            // give you three points (x1,y1), (x2,y2), (x3,y3) to calculate area and perimeter
+            double area() const{}
+            double perimeter() const{}
+            bool isIsoscelesTriangle(){}
+        };
+        
+    `ellipse.h`
+    
+        class Ellipse:public Shape
+        {
+        public:
+            Ellipse(double semiMajorAxes,double semiMinorAxes):_semiMajorAxes(semiMajorAxes), _semiMinorAxes(semiMinorAxes){}
+            double area() const{}
+            double perimeter() const{} // perimeter formula: 2π * semiMinorAxes + 4(semiMajorAxes-semiMinorAxes)
  
-主旨: Gitlab帳號創建完成 
- 
-內文附上"學號" 
+        };
+        
+2. Implement `area()` and `perimeter()` method for each class.
 
-EX 
+   ( If you need to use "pi", you should include <math.h> and use `M_PI` )
 
-`主旨`: Gitlab帳號創建完成
+3. Implement the `isIsoscelesTriangle()` function in Triangle class.
 
-`學號`: 107598058  
+        class Triangle:public Shape 
+        {
+        ...
+            bool isIsoscelesTriangle()
+        ...
+        }
+    
+    If it is not a IsoscelesTriangle, you should throw the `string` "Not a IsoscelesTriangle."
 
-請務必在`9/11(三)23:59`前寄信!
+    `Note:`
+        If it can not form a triangle, you also need to throw the `string` "Not a IsoscelesTriangle."
 
-**(隔日9/12,待助教審核完畢，即可看到HW專案，進行作業上傳)**
+        class Triangle:public Shape 
+        {
+        ...
+            Triangle(double x1, double y1, double x2, double y2, double x3, double y3):_x1(x1), _x2(x2), _x3(x3), _y1(y1), _y2(y2), _y3(y3)
+            {
+            ...
+                if (...)
+                {
+                    throw ...;
+                }
+                ...
 
-### 教學文件閱讀順序
-1. GitlabSetup_POSD2019f.pdf 
+            }
 
-2. 環境設定.pdf
+            bool isIsoscelesTriangle(){}
+        ...
+        }
+    
 
-3. 文字編輯器安裝教學.pdf 
+4. Write the unit test in `ut_shape.cpp` and put it under the `test` folder .
 
-4. 作業上傳教學.pdf 
+5. Write the corresponding makefile to generate executable file which named `ut_all` under the `bin` folder. 
 
-5. jenkins.pdf
+# Note
 
-### makefile 教學 ###
-`makefile_tutorial`: https://ssl-gitlab.csie.ntut.edu.tw/course/makefile_tutorial
+Professor have push his code on the course repository.
 
-### jenkins URL ###
-https://ssl-jenkins.csie.ntut.edu.tw/login?from=/
+You can refer to the source code under `shapes` folder at https://ssl-gitlab.csie.ntut.edu.tw/yccheng/posd2019f.
 
-`帳號` `密碼`預設皆為學號
+# Mark
+
+TA assigned 10 test cases in CI.
+
+Each test is 10 points, total is 100 points.
+
+
+# Deadline
+11:59 p.m. 19 Sep 2019
+
+# File structure
+This time your directory structure should be like:
+ - 學號_HW
+    - src
+
+      shape.h
+
+      ellipse.h
+
+      circular_sector.h
+
+      triangle.h
+
+    - test
+
+      ut_shape.cpp
+
+    - bin
+
+      ut_all
+
+    - makefile
+
+
+
+    `shape.h`, `ellipse.h`, `circular_sector.h`, `triangle.h` under `src` folder
+
+    `ut_shape.cpp` under `test` folder
+
+    `ut_all` under `bin` folder
+
+Make sure your test on local is passed.Then you can push to gitlab and go to jenkins to check the report.
