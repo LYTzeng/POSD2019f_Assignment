@@ -45,7 +45,7 @@ Practice visitor and proxy pattern.
           ASSERT_ANY_THROW(new File("./123")); //If the node doesn't exist, you should throw string "Node is not exist!"
           ASSERT_ANY_THROW(new File("./test_data/folder")); //If the File doesn't exist, you should throw string "It is not File!"
           ASSERT_ANY_THROW(new Folder("./test_data/hello")); //If the Folder doesn't exist, you should throw string "It is not Folder!"
-          ASSERT_ANY_THROW(new Link("./test_data/test")); //If the Link doesn't exist, you should throw string "It is not Link!"
+          ASSERT_ANY_THROW(new Link("./test_data/test", a_out)); //If the Link doesn't exist, you should throw string "It is not Link!"
         }
         
  4. Implement `getPath()` for Node Class.
