@@ -218,10 +218,10 @@ Below is assertion!
     - find_visitor.cpp
     - find_visitor.h
     - folder.h
-    - link.h
-    - node_iterator.h
-    - node.h
     - iterator.h
+    - link.h
+    - node.h
+    - null_iterator.h
     - update_path_visitor.cpp
     - update_path_visitor.h
     - visitor.h
