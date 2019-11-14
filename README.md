@@ -34,7 +34,7 @@ Practice visitor and proxy pattern.
         
           Node * getSource(); // return node that the link point to!
         
-          NodeIterator* createIterator(); // return null Iterator
+          Iterator* createIterator(); // return null Iterator
 
         };
   
@@ -221,7 +221,7 @@ Below is assertion!
     - link.h
     - node_iterator.h
     - node.h
-    - null_iterator.h
+    - iterator.h
     - update_path_visitor.cpp
     - update_path_visitor.h
     - visitor.h
