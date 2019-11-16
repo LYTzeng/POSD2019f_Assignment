@@ -188,7 +188,7 @@ Below is assertion!
         gp->renameNode("TA_folder");
         ASSERT_EQ("TA_folder", gp->name()); // Check the node name in your own file system!
         
-        hw_folder->accept(upv); 
+        gp->accept(upv); 
         /* 
             Accept the UpdatePathVisitor to  update the node path in your own file system!
             UpdatePathVisitor should update the path of itself and its child node!
