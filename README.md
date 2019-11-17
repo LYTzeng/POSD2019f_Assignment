@@ -131,9 +131,11 @@ Practice visitor and proxy pattern.
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *test_data/`a.out`*
         
-        struct stat _st;
+        struct staUpdatePathVisitor;
+        UpdatePathVisitor * upv = new UpdatePathVisitor();
         a_out = new File("test_data/a.out");
         a_out->renameNode("TA_file");
+        a_out->accept(upv);
         ASSERT_EQ("TA_file", a_out->name()); // Check the node name in your own file system!
         if (lstat("test_data/TA_file", &_st) != 0)
             FAIL(); // Check the physical node name!
