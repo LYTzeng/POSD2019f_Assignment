@@ -33,7 +33,7 @@
             protected:
                 FileSystemBuilder();
             public:
-                static FileSystemBuilder * Instance();
+                static FileSystemBuilder * instance();
                 void build(string path);
                 Node * getRoot();
         }
@@ -43,7 +43,7 @@
  6. TA will write test cases to verify the builder can build the correct object.
 
         TEST(FileSystemBuilder, file){
-          FileSystemBuilder * fb = FileSystemBuilder::Instance();
+          FileSystemBuilder * fb = FileSystemBuilder::instance();
           fb.build("test/test_folder/a.out");
           ASSERT_EQ("a.out", fb.getRoot()->name());
           ASSERT_EQ("test/test_folder/a.out", fb.getRoot()->getPath());
