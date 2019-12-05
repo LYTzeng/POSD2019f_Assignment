@@ -12,7 +12,7 @@
 ### practice Singleton pattern.
 
 # Requirements
- 1. Make sure your project structure is the same as [course project directory](https://ssl-gitlab.csie.ntut.edu.tw/yccheng/posd2019f).
+ 1. You can reference [course project directory](https://ssl-gitlab.csie.ntut.edu.tw/yccheng/posd2019f).
  
  2. Throwing an exception as hw6 if your path of constructor does not correspond with your class or the node doesn't exist.
 
