@@ -20,11 +20,11 @@ If you don't record your development enviroment then we will run your program in
 And if it cannot run in TA's machine, you will not get any grade.
 
 # Requirements
- 1.Display the folder structures using wxwidgets.
+ 1. Display the folder structures using wxwidgets.
 
  ![main page](/image/mainpage.png)
 
- 2.**Feature 1: Show folder structure with file size.**
+ 2. **Feature 1: Show folder structure with file size.**
 
  Use the command to choose which folder structure should represent in wxwidgets.
 
@@ -41,7 +41,7 @@ And if it cannot run in TA's machine, you will not get any grade.
 
  `Tips: Use the wxTreeCtrl to implement this feature.`
 
- 3.**Feature 2: Modify file name and save the change.**
+ 3. **Feature 2: Modify file name and save the change.**
 
  Double click the label to enter the edit mode.  After renaming the file, Show the dialog when pressing the Enter. Click yes to save the change, otherwise, discard save.
 
@@ -74,7 +74,7 @@ And if it cannot run in TA's machine, you will not get any grade.
 
  `Note: Use Observer pattern.`
 
- 4.**Feature 3: Show the file content**
+ 4. **Feature 3: Show the file content**
 
  Click the Node in tree view on the left of the application windows. And show the corresponding text content on right of the application windows. if the node can not show the text content. please show the default content on the right of the application windows.
 
@@ -97,7 +97,7 @@ And if it cannot run in TA's machine, you will not get any grade.
 
  `Tips: Use the wxTextCtrl to implement this feature.`
 
- 5.**Feature 4: Modify file content and save the change**
+ 5. **Feature 4: Modify file content and save the change**
 
  Modity the text content and click the save button or press `ctrl+s` key to save the change. Show the dialog when you click save button or press `ctrl+s` key. Click yes to save the change, otherwise, discard save.
 
@@ -116,7 +116,7 @@ And if it cannot run in TA's machine, you will not get any grade.
 
  `Note: Use Observer pattern.`
 
- 6.Write the corresponding makefile to generate executable file which named `hw8` in bin folder.
+ 6. Write the corresponding makefile to generate executable file which named `hw8` in bin folder.
 
 
 # Grading rubrics
