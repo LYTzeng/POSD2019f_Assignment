@@ -1,57 +1,144 @@
-# Homework Rule
+# Pattern Oriented Software Design
+#### Fall, 2019
+#### Dept. of Computer Science and Information Engineering
+#### Taipei Tech
 
-1. 作業準時交，分數視通過測試
+#### Homework 8
 
-   (若無撰寫當次作業欲開發功能之單元測試，將酌量扣分，最高扣10分)
+# Purpose of the homework
+####  Implement Observer Pattern.
+####  Implement the text editor with following feature.
+   * Show folder structure with file size.
+   * Modify file name and save the change.
+   * Show the file content.
+   * Modify file content and save the change.
 
-2. Jenkins會於deadline準時關閉,作業於deadline後"兩天內"交出，以遲交計算，分數*80%
+# Requirements
+ 1.Display the folder structures using wxwidgets.
 
-    (若有補交請寄信通知助教 "posd2019ta@gmail.com"，若無寄信將不予受理)
+ ![main page](/image/mainpage.png)
 
-3. 作業於deadline後"兩天後"交出，將不予計分，此次作業0分計算
+ 2.**Feature: Show folder structure with file size.**
 
-    **若有`特殊情況`請事先寄信通知助教** 
-    
-    **若有其他問題，亦可至宏裕科技大樓Lab1321 軟體系統實驗室，找助教詢問**
+ Use the command to choose which folder structure should represent in wxwidgets.
 
-## Create Gitlab Account
-請參考檔案 "GitlabSetup_POSD2019f.pdf" 
-創建Gitlab帳號
+ Type following command:
 
-創建好帳號之後
+ ![command](/image/command.PNG)
 
-請寄信給助教
- "posd2019ta@gmail.com"
+ representation:
+
+ ![main page](/image/mainpage.png)
+
+ demo:
+ [feature1](https://drive.google.com/file/d/1HJukDp3vXKt0IG05xKubMKE-XEyXnKua/view?usp=sharing)
+
+ `Tips: Use the wxTreeCtrl to implement this feature.`
+
+ 3.**Feature: Modify file name and save the change.**
+
+ Double click the label to enter the edit mode.  After renaming the file, Show the dialog when pressing the Enter. Click yes to save the change, otherwise, discard save.
+
+ You should not be allowed to edit the part of size in the label.
+
+ Double click:
+
+ ![editTreeView](/image/editTreeView.png)
+
+ Rename and press Enter:
+
+ ![Show dialog](/image/editTreeViewDialog.png)
+
+ Save the change:
+
+
+ ![Save the change](/image/SaveTheChangeInTreeView.png)
+
+ Edit size:
+
+ ![Edit size](/image/editSize.png)
+
+ Press `Enter` after editing size:
+
+ ![Press `Enter` after editing size](/image/pressEnterAfterEditSize.png)
+
+
+ demo:
+ [feature2](https://drive.google.com/file/d/1zJ2_eUUdu8mF-y0UMB2YE2a90CcmYhzz/view?usp=sharing)
+
+ `Note: Use Observer pattern.`
+
+ 4.**Feature: Show the file content**
+
+ Click the Node in tree view on the left of the application windows. And show the corresponding text content on right of the application windows. if the node can not show the text content. please show the default content on the right of the application windows.
+
+ default content:
  
-主旨: Gitlab帳號創建完成 
- 
-內文附上"學號" 
+ binary file & link: "The file is not displayed in the editor because it uses an unsupported text encoding.".
 
-EX 
+ folder: do not show anything.
 
-`主旨`: Gitlab帳號創建完成
+ Click the node which can show the text content.
 
-`學號`: 107598058  
+ ![textContent page](/image/editViewShowTextfile.png)
 
-請務必在`9/11(三)23:59`前寄信!
+ Click the node which can not show the text content.
 
-**(隔日9/12,待助教審核完畢，即可看到HW專案，進行作業上傳)**
+ ![binaryContent page](/image/editViewShowBinaryfileDefaultValue.png)
 
-### 教學文件閱讀順序
-1. GitlabSetup_POSD2019f.pdf 
+ demo:
+ [feature3](https://drive.google.com/file/d/1FhPhdp2hPRkcRN5gqjWMEMui4vtbp9JY/view?usp=sharing)
 
-2. 環境設定.pdf
+ `Tips: Use the wxTextCtrl to implement this feature.`
 
-3. 文字編輯器安裝教學.pdf 
+ 5.**Feature: Modify file content and save the change**
 
-4. 作業上傳教學.pdf 
+ Modity the text content and click the save button or press `ctrl+s` key to save the change. Show the dialog when you click save button or press `ctrl+s` key. Click yes to save the change, otherwise, discard save.
 
-5. jenkins.pdf
+ Edit the content and click the save button or press `ctrl+s` key:
 
-### makefile 教學 ###
-`makefile_tutorial`: https://ssl-gitlab.csie.ntut.edu.tw/course/makefile_tutorial
+ ![Show dialog](/image/editEditViewDialog.png)
 
-### jenkins URL ###
-https://ssl-jenkins.csie.ntut.edu.tw/login?from=/
+ Save the change:
 
-`帳號` `密碼`預設皆為學號
+ ![Save the change](/image/SaveEditView.png)
+
+ After change the file content the size of the file will change, and you should alse update the size in the label!
+
+ demo:
+ [feature4](https://drive.google.com/file/d/11sYX52X-NHpEnJR7U2_uvKJG5rqMBJXp/view?usp=sharing)
+
+ `Note: Use Observer pattern.`
+
+ 6.Write the corresponding makefile to generate executable file which named `hw8` in bin folder.
+
+
+# Grading rubrics
+Each feature is 25 points.
+
+# Deadline
+11:59 p.m. 1 Jan  2020
+
+# Note
+Make sure your wxwidgets is installed and working correctly.
+Then you can push to Gitlab.
+
+Write the corresponding makefile to generate executable file which named `hw8` in bin folder.
+
+We will `make` in TA's machine to generate `hw8` and you should have the following file structure.
+
+Write down which your development enviroment is in `README.md`, MAC, LINUX or ubuntu bash on win10.
+
+If you don't record your development enviroment then we will run your program in ubuntu bash in win10. And if it cannot run in TA's machine, you will not get any grade.
+
+
+#### File structure:
+
+```
+- bin
+- obj
+- src
+- test
+makefile
+README.md
+```
