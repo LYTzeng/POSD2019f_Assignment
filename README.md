@@ -13,6 +13,8 @@
    * Show the file content.
    * Modify file content and save the change.
 
+No CI Test, so Test By Yourself!
+
 Write down which your development enviroment is in `README.md`, MAC, LINUX or ubuntu bash on win10.
 
 If you don't record your development enviroment then we will run your program in Ubuntu bash in win10. 
