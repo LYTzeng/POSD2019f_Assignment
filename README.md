@@ -36,7 +36,7 @@ And if it cannot run in TA's machine, you will not get any grade.
 
  ![main page](/image/mainpage.png)
 
- demo:
+ Demo:
  [Feature1](https://drive.google.com/file/d/1HJukDp3vXKt0IG05xKubMKE-XEyXnKua/view?usp=sharing)
 
  `Tips: Use the wxTreeCtrl to implement this feature.`
