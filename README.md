@@ -15,7 +15,7 @@
 
 Write down which your development enviroment is in `README.md`, MAC, LINUX or ubuntu bash on win10.
 
-If you don't record your development enviroment then we will run your program in ubuntu bash in win10. 
+If you don't record your development enviroment then we will run your program in Ubuntu bash in win10. 
 
 And if it cannot run in TA's machine, you will not get any grade.
 
