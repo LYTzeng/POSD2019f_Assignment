@@ -32,7 +32,7 @@ And if it cannot run in TA's machine, you will not get any grade.
 
  ![command](/image/command.PNG)
 
- representation:
+ Representation:
 
  ![main page](/image/mainpage.png)
 
@@ -69,7 +69,7 @@ And if it cannot run in TA's machine, you will not get any grade.
  ![Press `Enter` after editing size](/image/pressEnterAfterEditSize.png)
 
 
- demo:
+ Demo:
  [Feature2](https://drive.google.com/file/d/1zJ2_eUUdu8mF-y0UMB2YE2a90CcmYhzz/view?usp=sharing)
 
  `Note: Use Observer pattern.`
@@ -92,7 +92,7 @@ And if it cannot run in TA's machine, you will not get any grade.
 
  ![binaryContent page](/image/editViewShowBinaryfileDefaultValue.png)
 
- demo:
+ Demo:
  [Feature3](https://drive.google.com/file/d/1FhPhdp2hPRkcRN5gqjWMEMui4vtbp9JY/view?usp=sharing)
 
  `Tips: Use the wxTextCtrl to implement this feature.`
@@ -111,7 +111,7 @@ And if it cannot run in TA's machine, you will not get any grade.
 
  After change the file content the size of the file will change, and you should alse update the size in the label!
 
- demo:
+ Demo:
  [Feature4](https://drive.google.com/file/d/11sYX52X-NHpEnJR7U2_uvKJG5rqMBJXp/view?usp=sharing)
 
  `Note: Use Observer pattern.`
