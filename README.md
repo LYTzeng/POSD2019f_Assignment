@@ -18,7 +18,7 @@
 
  ![main page](/image/mainpage.png)
 
- 2.**Feature: Show folder structure with file size.**
+ 2.**Feature 1: Show folder structure with file size.**
 
  Use the command to choose which folder structure should represent in wxwidgets.
 
@@ -31,11 +31,11 @@
  ![main page](/image/mainpage.png)
 
  demo:
- [feature1](https://drive.google.com/file/d/1HJukDp3vXKt0IG05xKubMKE-XEyXnKua/view?usp=sharing)
+ [Feature1](https://drive.google.com/file/d/1HJukDp3vXKt0IG05xKubMKE-XEyXnKua/view?usp=sharing)
 
  `Tips: Use the wxTreeCtrl to implement this feature.`
 
- 3.**Feature: Modify file name and save the change.**
+ 3.**Feature 2: Modify file name and save the change.**
 
  Double click the label to enter the edit mode.  After renaming the file, Show the dialog when pressing the Enter. Click yes to save the change, otherwise, discard save.
 
@@ -64,11 +64,11 @@
 
 
  demo:
- [feature2](https://drive.google.com/file/d/1zJ2_eUUdu8mF-y0UMB2YE2a90CcmYhzz/view?usp=sharing)
+ [Feature2](https://drive.google.com/file/d/1zJ2_eUUdu8mF-y0UMB2YE2a90CcmYhzz/view?usp=sharing)
 
  `Note: Use Observer pattern.`
 
- 4.**Feature: Show the file content**
+ 4.**Feature 3: Show the file content**
 
  Click the Node in tree view on the left of the application windows. And show the corresponding text content on right of the application windows. if the node can not show the text content. please show the default content on the right of the application windows.
 
@@ -87,11 +87,11 @@
  ![binaryContent page](/image/editViewShowBinaryfileDefaultValue.png)
 
  demo:
- [feature3](https://drive.google.com/file/d/1FhPhdp2hPRkcRN5gqjWMEMui4vtbp9JY/view?usp=sharing)
+ [Feature3](https://drive.google.com/file/d/1FhPhdp2hPRkcRN5gqjWMEMui4vtbp9JY/view?usp=sharing)
 
  `Tips: Use the wxTextCtrl to implement this feature.`
 
- 5.**Feature: Modify file content and save the change**
+ 5.**Feature 4: Modify file content and save the change**
 
  Modity the text content and click the save button or press `ctrl+s` key to save the change. Show the dialog when you click save button or press `ctrl+s` key. Click yes to save the change, otherwise, discard save.
 
@@ -106,7 +106,7 @@
  After change the file content the size of the file will change, and you should alse update the size in the label!
 
  demo:
- [feature4](https://drive.google.com/file/d/11sYX52X-NHpEnJR7U2_uvKJG5rqMBJXp/view?usp=sharing)
+ [Feature4](https://drive.google.com/file/d/11sYX52X-NHpEnJR7U2_uvKJG5rqMBJXp/view?usp=sharing)
 
  `Note: Use Observer pattern.`
 
