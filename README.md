@@ -123,7 +123,7 @@ And if it cannot run in TA's machine, you will not get any grade.
 Each feature is 25 points.
 
 # Deadline
-11:59 p.m. 1 Jan  2020
+11:59 p.m. 4 Jan  2020
 
 # Note
 Make sure your wxwidgets is installed and working correctly.
